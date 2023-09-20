@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-Application</title>
+</head>
+<body class="bg-[#FAF8F1] ">
+    <nav class="">
+        <div class="fixed bg-opacity-60 bg-[#FAEAB1] backdrop-blur-sm bg-slate bg-clip-padding w-full flex item-center justify-between text-sm md:text-base lg:text-lg z-10">
+            <div>
+            <a href="#" onclick="reload()">
+                <img src="./assets/logo.png" alt="" class="h-16 md:translate-x-4">
+            </a>
+        </div>
+            <div class="nav-links flex items-center ">
+                <ul class="flex gap-5 sm:gap-10 md:gap-24 ">
+                    <li class="hover:cursor-pointer hover:text-[#4e48f2] focus:text-[#4e48f2]" id="ipl" onclick="fetchNews('IPL')">IPL</li>
+                    <li class="hover:cursor-pointer hover:text-[#4e48f2] focus:text-[#4e48f2]" id="finance" onclick="fetchNews('finance')">Finance</li>
+                    <li class="hover:cursor-pointer hover:text-[#4e48f2] focus:text-[#4e48f2]" id="politics" onclick="fetchNews('politics')">Politics</li>
+                </ul>
+            </div>
+            <div class="search-bar sm:-translate-x-3 md:-translate-x-9 flex items-center">
+                <input type="text" class=" p-1 rounded" id="news-input" placeholder="e.g Science">
+                <button class=" bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 text-white p-1 rounded ml-2 pl-5 pr-5" id="search-btn">Search</button>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="pt-24 pl-4 pr-4">
+        <div class="p-10 flex flex-wrap justify-between items-center" id="card-container">
+
+            
+                 
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card mb-10 w-80 min-h-[500px] rounded shadow-xl bg-white overflow-hidden  hover:ease-in hover:duration-300 hover:bg-[#f7f6f5] hover:-translate-y-[2px] hover:shadow-slate-400">
+            <div class="card-header w-[100%]   object-cover">
+                <img id="news-img" src="https://via.placeholder.com/400x200">
+            </div>
+            <div class="card-content pr-2 pl-2">
+                <p class="text-[25px]" id="news-title">This is the Title</p>
+                <p class="text-[13px] mt-1 mb-2 " id="news-source">End Gadget 19/09/2023</p>
+                <p class="mt-7" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ipsum unde exercitationem recusandae similique tenetur numquam adipisci laborum laudantium quia?</p>
+            </div>
+        </div>
+    </template>
+    <script src="index.js"></script>
+</body>
+</html>
